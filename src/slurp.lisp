@@ -6,6 +6,11 @@
 
 (in-package :slurp)
 
+(declaim
+ (ftype (function (&key (:stream stream) (:reader (function (stream) t)))
+         (function nil t))
+        make-slurper))
+
 (defun make-slurper (&key stream reader)
   (let ((slurper
          (lambda ()
