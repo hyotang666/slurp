@@ -60,12 +60,15 @@
 ; Consume stream contents.
 
 ;;;; Notes:
-; Slurper is GCed, stream will be closed.
-#?(let ((stream (make-string-input-stream "")))
-    (make-slurper stream #'read)
-    (trivial-garbage:gc)
-    (open-stream-p stream))
-=> NIL
+; When slurper is GCed, stream will be closed.
+#?(defparameter s (make-string-input-stream ""))
+=> S
+
+#?(make-slurper s #'read) :be-the function
+
+#?(trivial-garbage:gc) => implementation-dependent
+
+#?(open-stream-p s) => nil
 
 ;;;; Exceptional-Situations:
 ; When specified READER is not function as (function (stream) t), the behavior is unspecified.
