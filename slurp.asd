@@ -2,9 +2,11 @@
 (in-package :asdf)
 (defsystem "slurp"
   :version
-  "0.0.0"
+  "1.0.0"
   :depends-on
-  nil
+  (
+   "trivial-garbage" ; GC.
+   )
   :pathname
   "src/"
   :components
