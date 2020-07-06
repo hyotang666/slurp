@@ -68,6 +68,9 @@
 
 #?(trivial-garbage:gc) => implementation-dependent
 
+#+ccl ; needs some times to gc finished.
+#?(sleep 0.5) => NIL
+
 #?(open-stream-p s) => nil
 
 ;;;; Exceptional-Situations:
