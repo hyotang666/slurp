@@ -17,6 +17,7 @@
   ;; It does not specify the behavior when stream is closed input stream.
   (assert (open-stream-p stream))
   (assert (input-stream-p stream))
+  #+clisp (check-type reader (or symbol function))
   (let* ((open t)
          (slurper
           (lambda ()
