@@ -1,6 +1,9 @@
 ; vim: ft=lisp et
 (in-package :asdf)
 (defsystem "slurp"
+  :author "SATO shinichi"
+  :license "MIT"
+  :description "Making reader which slurp content from huge file."
   :version
   "2.0.4"
   :depends-on
