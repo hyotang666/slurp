@@ -31,14 +31,14 @@
 
 ; Not input.
 #?(make-slurper (make-string-output-stream) 'read-char)
-:signals stream-error
+:signals error
 
 ; Not open.
 #?(make-slurper (let ((stream (make-string-input-stream "dummy")))
                   (close stream)
                   stream)
                 'read-char)
-:signals stream-error
+:signals error
 
 ; Stream will be closed when get end-of-file.
 #?(let* ((stream (make-string-input-stream ""))

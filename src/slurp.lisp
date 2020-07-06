@@ -12,6 +12,11 @@
         make-slurper))
 
 (defun make-slurper (stream reader)
+  ;; [CLHS says](http://www.lispworks.com/documentation/HyperSpec/Body/f_in_stm.htm)
+  ;; > input-stream-p returns true if stream is an input stream; otherwise, returns false.
+  ;; It does not specify the behavior when stream is closed input stream.
+  (assert (open-stream-p stream))
+  (assert (input-stream-p stream))
   (let* ((open t)
          (slurper
           (lambda ()
