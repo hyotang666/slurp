@@ -2,7 +2,7 @@
 (in-package :asdf)
 (defsystem "slurp"
   :version
-  "1.0.1"
+  "2.0.0"
   :depends-on
   (
    "trivial-garbage" ; GC.
