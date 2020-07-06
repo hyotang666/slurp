@@ -17,19 +17,19 @@ For details, see [spec file](spec/slurp.lisp)
 ## Alternatives
 ### [Series](https://github.com/tokenrove/series) especialy `scan-file`.
 
-* Advantage.
-#### Tiny
+#### Advantage.
+* Tiny
 Series is framework.
 Slurp is utility.
 
-#### Well supported binary file.
+* Well supported binary file.
 `SERIES:SCAN-FILE` accepts file-name as argument.
 Slurp accepts `STREAM`.
 
 When file has metadata before its main contents, slurp is better.
 
-* Disadvantage
-#### Tiny
+#### Disadvantage
+* Tiny
 It is framework what you want.
 
 ## From developer
