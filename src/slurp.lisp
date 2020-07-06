@@ -12,10 +12,11 @@
         make-slurper))
 
 (defun make-slurper (stream reader)
-  (let ((slurper
-         (lambda ()
-           (handler-case (funcall reader stream)
-             (end-of-file ()
-               (close stream) nil)))))
+  (let* ((open t)
+         (slurper
+          (lambda ()
+            (handler-case (and open (funcall reader stream))
+              (end-of-file ()
+                (close stream) (setf open nil))))))
     (trivial-garbage:finalize slurper (lambda () (close stream)))
     slurper))
