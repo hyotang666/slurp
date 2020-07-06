@@ -7,7 +7,7 @@
 (in-package :slurp)
 
 (declaim
- (ftype (function (stream (function (stream) t))
+ (ftype (function (stream (or symbol (function (stream) t)))
          (values (function nil t) &optional))
         make-slurper))
 
