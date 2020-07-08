@@ -1,4 +1,4 @@
-# SLURP 2.0.4
+# SLURP 3.0.1
 ## What is this?
 Making reader which slurp content from huge file.
 
@@ -19,10 +19,12 @@ For details, see [spec file](spec/slurp.lisp)
 
 #### Advantage.
 * Tiny
+
 Series is framework.
 Slurp is utility.
 
 * Well supported binary file.
+
 `SERIES:SCAN-FILE` accepts file-name as argument.
 Slurp accepts `STREAM`.
 
@@ -30,7 +32,8 @@ When file has metadata before its main contents, slurp is better.
 
 #### Disadvantage
 * Tiny
-It is framework what you want.
+
+It may framework what you want.
 
 ## From developer
 
