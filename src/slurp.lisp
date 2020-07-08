@@ -28,6 +28,13 @@
     (trivial-garbage:finalize slurper (lambda () (close stream)))
     slurper))
 
+(declaim
+ (ftype (function
+         (file-stream (or symbol (function (file-stream) t)) (integer 1 *) &key
+          (:step (integer 1 *)) (:offset (integer 0 *)))
+         (values (function nil t) &optional))
+        make-random-slurper))
+
 (defun make-random-slurper (stream reader max &key (step 1) (offset 0))
   (assert (open-stream-p stream))
   (assert (input-stream-p stream))
