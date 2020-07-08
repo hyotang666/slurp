@@ -2,7 +2,7 @@
 (in-package :asdf)
 (defsystem "slurp.test"
   :version
-  "0.3.0"
+  "0.3.1"
   :depends-on
   (:jingoh "slurp")
   :components

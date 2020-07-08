@@ -187,6 +187,9 @@
 
 #?(TRIVIAL-GARBAGE:GC) => IMPLEMENTATION-DEPENDENT
 
+#+ccl ; needs some times to gc finished.
+#?(sleep 0.5) => NIL
+
 #?(OPEN-STREAM-P S) => NIL
 
 ;;;; Exceptional-Situations:
