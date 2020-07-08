@@ -5,7 +5,7 @@
   :license "MIT"
   :description "Making reader which slurp content from huge file."
   :version
-  "3.0.0"
+  "3.0.1"
   :depends-on
   (
    "trivial-garbage" ; GC.

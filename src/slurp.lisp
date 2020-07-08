@@ -40,7 +40,12 @@
   (assert (open-stream-p stream))
   (assert (input-stream-p stream))
   #+clisp
-  (check-type reader (or symbol function))
+  (progn (check-type reader (or symbol function))
+         (check-type max (integer 1 *))
+         (check-type step (integer 1 *))
+         (check-type offset (integer 0 *)))
+  #+(or clisp ccl)
+  (check-type stream file-stream)
   (let* ((slurper
           (lambda ()
             (assert (file-position stream (+ offset (* (random max) step))))
