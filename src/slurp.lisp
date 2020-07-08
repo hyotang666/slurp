@@ -2,7 +2,8 @@
 
 (defpackage :slurp
   (:use :cl)
-  (:export #:make-slurper))
+  (:export #:make-slurper
+           #:make-random-slurper))
 
 (in-package :slurp)
 
